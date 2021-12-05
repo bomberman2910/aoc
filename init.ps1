@@ -16,4 +16,5 @@ if(-not (Test-Path -Path $folder))
     New-Item ($folder + "\input.txt")
     Copy-Item ".\template.py" ($folder + "\puzzle1.py")
     Copy-Item ".\template.py" ($folder + "\puzzle2.py")
+    code $folder
 }

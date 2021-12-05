@@ -5,12 +5,12 @@ def puzzle(filecontent):
 
 def test():
     testfile = open("test.txt", "r")
-    content = testfile.readlines().splitlines()
+    content = testfile.read().splitlines()
     puzzle(content)
 
 if(TEST):
     test()
 else:
     inputfile = open("input.txt", "r")
-    filecontent = inputfile.readlines().splitlines()
+    filecontent = inputfile.read().splitlines()
     puzzle(filecontent)
