@@ -1,16 +1,24 @@
 TEST = True
+TEST_SOLUTION = 0 # add solution for test input here
 
 def puzzle(filecontent):
-    pass
+    result = 0
+    # insert solution here
 
-def test():
-    testfile = open("test.txt", "r")
-    content = testfile.read().splitlines()
-    puzzle(content)
+    return result
+
+def solve(input_filename):
+    file = open(input_filename, "r")
+    content = file.read().splitlines()
+    return puzzle(content)
 
 if(TEST):
-    test()
+    testsolution = solve("test.txt")
+    if(testsolution == TEST_SOLUTION):
+        print("Solution for test input correct")
+        regularsolution = solve("input.txt")
+        print("Answer for main input", regularsolution)
+    else:
+        print(f"Solution for test input incorrect! (expected: {TEST_SOLUTION}; is: {testsolution})")
 else:
-    inputfile = open("input.txt", "r")
-    filecontent = inputfile.read().splitlines()
-    puzzle(filecontent)
+    solve("input.txt")
