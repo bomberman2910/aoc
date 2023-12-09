@@ -1,13 +1,13 @@
 TEST = True
 TEST_SOLUTION = 0 # add solution for test input here
 
-def puzzle(filecontent):
+def puzzle(filecontent : list[str]) -> int:
     result = 0
     # insert solution here
 
     return result
 
-def solve(input_filename):
+def solve(input_filename : str) -> int:
     file = open(input_filename, "r")
     content = file.read().splitlines()
     return puzzle(content)
@@ -21,4 +21,5 @@ if(TEST):
     else:
         print(f"Solution for test input incorrect! (expected: {TEST_SOLUTION}; is: {testsolution})")
 else:
-    solve("input.txt")
+    regularsolution = solve("input.txt")
+    print("Answer for main input", regularsolution)
